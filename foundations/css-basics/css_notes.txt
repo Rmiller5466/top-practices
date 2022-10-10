@@ -9,3 +9,44 @@
 
 .subsection.header { ... }
 .subsection#preview { ... }
+
+/////////////////
+// CSS Box Model
+/////////////////
+
+padding - increases the space between the edge of a box and the content inside of it.
+margin - increases the space between a box and any others that sit next to it.
+border - adds space (even if it’s only a pixel or two) between the margin and the padding.
+
+If a box has an outer display type of block, then:
+
+    The box will break onto a new line.
+    The width and height properties are respected.
+    Padding, margin and border will cause other elements to be pushed away from the box.
+    The box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
+
+If a box has an outer display type of inline, then:
+
+    The box will not break onto a new line.
+    The width and height properties will not apply.
+    Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+    Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
+
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+https://css-tricks.com/almanac/properties/m/margin/
+
+
+
+////////////////
+// Misc. Notes
+////////////////
+
+When using <img>, always assign a height and width.  This reserves a space on the webpage
+  and prevents the image from shifting layout once loaded
+
+Using a height of auto with a width will ensure the image maintains porportions
+
+https://www.w3schools.com/Css/css_font.asp
+https://www.w3schools.com/cssref/css_websafe_fonts.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index
