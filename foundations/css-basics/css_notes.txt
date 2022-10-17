@@ -36,7 +36,35 @@ If a box has an outer display type of inline, then:
 https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
 https://css-tricks.com/almanac/properties/m/margin/
 
+/////////////////
+// CSS FlexBox
+/////////////////
 
+Elements can be both containers and items
+'flex:' is shorthand for - flex-grow, flex-shrink, flex-basis
+'flex-grow: 1' tells all elements to grow to the same size within the container
+
+flex-shrink only ends up being applied if the size of all flex items is larger than their parent container. 
+If 3 divs had a width declaration of 100px, and .flex-container was smaller than 300px, our divs would have to shrink to fit.
+'flex-shrink: 1' tells all elements to shrink to the same size within the container
+'flex-shrink: 0' will tell an item not to shrink
+
+flex-basis sets the initial size of a flex item - Similar to width:
+Using auto as a flex-basis tells the item to check for a width declaration
+
+gap: 1rem - Spacing inbetween flex-items
+
+flex-wrap: wrap; - Allows flex-items to wrap
+
+justify-content: center - Align flex-items on the main axis
+to use justify-content on vertical spacing, make sure min-height is set on the parent
+
+align-items: change the content alignment on the cross-axis, 
+default is stretch (all items are the same size) 
+
+align-self: change the specifc content alignment on a specific flex-item
+
+when using flex-direction: column, flex-basis now refers to height instead of width
 
 ////////////////
 // Misc. Notes
@@ -44,6 +72,9 @@ https://css-tricks.com/almanac/properties/m/margin/
 
 When using <img>, always assign a height and width.  This reserves a space on the webpage
   and prevents the image from shifting layout once loaded
+
+width: max-content; - Fit the content in the space without text-wrapping
+width: min-content; - Fit the content based on the largest text with text-wrapping
 
 Using a height of auto with a width will ensure the image maintains porportions
 
