@@ -1,10 +1,44 @@
 html {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: solid red 1px;
   }
   
 *,
 *::before,
 *::after {
     box-sizing: inherit;
+    margin: inherit;
+    padding: inherit;
+    border: inherit;
   }
   
+header, .f, .s1 {
+    background-color: #1F2937;
+}
+
+.s3 {
+    background-color: #E5E7EB;
+}
+
+.hero-logo {
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+.hero-main {
+    font-size: 48px;
+    font-weight: extra-bold;
+    color: #F9FAF8;
+}
+
+.hero-secondary {
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+.btn {
+    color:#F9FAF8;
+    background-color: #3882F6;
+}
