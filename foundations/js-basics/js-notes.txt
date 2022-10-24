@@ -1,0 +1,42 @@
+////////////////
+// Script Tag /
+//////////////
+
+<script type="text/javascript"> </script>
+
+Comments used to be used to hide JavaScript code from old browsers
+  that didn’t know how to process the <script> tag.
+
+
+/////////////
+/// Misc ////
+/////////////
+
+When ECMAScript 5 (ES5) appeared, It added new features to the language and 
+modified some of the existing ones. To keep the old code working, most such 
+modifications are off by default. You need to explicitly enable them with 
+a special directive: "use strict".  This is placed at the top of a function or
+file as so: "use strict";
+
+Variables don't need to be declared first if not using strict
+
+Javascript typically uses camelCase naming
+
+Chromium based browsers use the V8 Javascript Engine
+Firefox uses Spidermonkey
+
+
+
+Infinity (or -Infinity) is the value JavaScript 
+will return if you calculate a number outside the largest possible number.
+
+Division by 0 (zero) also generates Infinity
+
+EcmaScript Specification Links:
+https://tc39.es/ecma262/
+
+MDN Web Reference Links:
+https://developer.mozilla.org/en-US/docs/Web
+
+Check compatibility of features
+https://caniuse.com/
