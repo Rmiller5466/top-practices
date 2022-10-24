@@ -74,6 +74,8 @@ when using flex-direction: column, flex-basis refers to height instead of width
 // Misc. Notes
 ////////////////
 
+Link with <link rel="stylesheet" href="styles.css">
+
 When using <img>, always assign a height and width.  This reserves space on the webpage
 and prevents the image from shifting layout once loaded
 
