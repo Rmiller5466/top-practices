@@ -1,16 +1,7 @@
-////////////////
-// Script Tag /
-//////////////
-
 <script type="text/javascript"> </script>
 
-Comments used to be used to hide JavaScript code from old browsers
+Comments used to be used between the <script> tags to hide JavaScript code from old browsers
   that didn’t know how to process the <script> tag.
-
-
-/////////////
-/// Misc ////
-/////////////
 
 When ECMAScript 5 (ES5) appeared, It added new features to the language and 
 modified some of the existing ones. To keep the old code working, most such 
@@ -25,8 +16,6 @@ Javascript typically uses camelCase naming
 Chromium based browsers use the V8 Javascript Engine
 Firefox uses Spidermonkey
 
-
-
 Infinity (or -Infinity) is the value JavaScript 
 will return if you calculate a number outside the largest possible number.
 
@@ -38,5 +27,69 @@ https://tc39.es/ecma262/
 MDN Web Reference Links:
 https://developer.mozilla.org/en-US/docs/Web
 
+MDN Bitwise Operators:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise_operators
+
 Check compatibility of features
 https://caniuse.com/
+
+Regex Tutorials:
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9g6m_6Sld9Q4jzqdqHd2HiD
+
+modal - a popout mini-window that forbids interaction with the rest of the page until the window is
+interacted with
+
+Examples of Modal's :
+  alert(msg)
+  result = prompt(title, [default])
+    presents the user with an input field and an OK/Cancel button
+    [default] is the initial value for the input field
+  result = confirm(question)
+
+unary + operator converts a value to a number
+  +"6" -> 6
+  +true -> 1
+  shorthand for Number()
+
+++counter vs conuter++
+only matters if counter is being used
+for example: x = ++counter; and x = counter++; are different
+
+A strict equality operator === checks the equality without type conversion
+
+under comparison, null -> 0 and undefined -> NaN
+
+It is recommended to only use the x ? y : z syntax for variable assingment and not
+as a replacement for if statements changing program logic
+
+A chain of || can be used similar to a fall back list.. first truth or last false is returned
+
+&& can be used in replacement of if because the action in the right part of && would execute only
+if the evaluation reaches it. That is, only if the condition is true.
+
+!! can be used to convert a value to a Boolean
+
+The result of a ?? b is:
+
+    if a is defined, then a,
+    if a isn’t defined, then b.
+
+In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+
+The nullish coalescing operator isn’t anything completely new. It’s just a nice syntax to get the first “defined” value of the two.
+
+Difference between OR and ??
+    || returns the first truthy value.
+    ?? returns the first defined value.
+
+A label is an identifier with a colon before a loop:
+
+labelName: for (...) {
+  ...
+  break labelName;
+}
+
+An empty return is also the same as return undefined:
+
+null is used to assign an “empty” or “unknown” value to a variable
+undefined is reserved as a default initial value for unassigned things
