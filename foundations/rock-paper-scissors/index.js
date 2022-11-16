@@ -1,7 +1,6 @@
 driver()
 
-function driver(){
-    console.log("Welcome to Rock Paper Scissors!")
+function loop(ps, cs){
     let user = prompt("Do you choose (Rock) (Paper) or (Scissors)?")
     user = user.toLowerCase()
     console.log(`Player chose ${user}`)
@@ -17,6 +16,20 @@ function driver(){
             console.log("Tie!")
             break
     }
+    return winner
+}
+
+function driver(){
+    console.log("Welcome to Rock Paper Scissors!")
+    playerScore = 0;
+    computerScore = 0;
+    for(i = 0; i < 5; i++){
+        console.log(`Starting round ${i + 1}`)
+        let winner = loop(playerScore,computerScore)
+        if(winner == 1) playerScore++
+        if(winner == 2) computerScore++
+    }
+    console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`)
 }
 
 function getComputerChoice(){
