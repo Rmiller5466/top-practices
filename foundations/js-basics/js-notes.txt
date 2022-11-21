@@ -76,7 +76,7 @@ The result of a ?? b is:
 
 In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
 
-The nullish coalescing operator isn’t anything completely new. It’s just a nice syntax to get the first “defined” value of the two.
+The nullish coalescing operator isn’t "new", It’s shorthand for getting the first “defined” value of the two.
 
 Difference between OR and ??
     || returns the first truthy value.
@@ -93,3 +93,60 @@ An empty return is also the same as return undefined:
 
 null is used to assign an “empty” or “unknown” value to a variable
 undefined is reserved as a default initial value for unassigned things
+
+#######
+# DOM #
+#######
+
+element.querySelector(selector) returns a reference to the first match of selector
+element.querySelectorAll(selectors) returns a “nodelist” of references to all matches of the selectors
+
+If you need to go from nodelist to array... use Array.from()
+
+const div = document.createElement('div');
+Creates the new element in memory
+
+Append Elements
+    parentNode.appendChild(childNode) appends childNode as the last child of parentNode
+    parentNode.insertBefore(newNode, referenceNode) inserts newNode into parentNode before referenceNode
+
+Remove Elements
+    parentNode.removeChild(child) removes child from parentNode on the DOM and returns a reference to child
+
+  
+Adding Inline Style
+
+    div.style.color = 'blue'; - adds the indicated style rule
+
+    div.style.cssText = 'color: blue; background: white;'; - adds several style rules
+
+    div.setAttribute('style', 'color: blue; background: white;'); - adds several style rules
+
+Editing Attributes
+
+    div.setAttribute('id', 'theDiv'); - if id exists, update it to 'theDiv', else create the id
+
+    div.getAttribute('id'); - returns value of specified attribute
+
+    div.removeAttribute('id'); - removes specified attribute
+
+Working with Classes
+
+    div.classList.add('new'); - adds class "new" to your new div
+
+    div.classList.remove('new'); - removes "new" class from div
+
+    div.classList.toggle('active'); - if div doesn't have class "active" then add it, or if it does, then remove it
+
+Events
+
+    <button onclick="alert('Hello World')">Click Me</button>
+
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', () => {
+      alert("Hello World");
+    });
+
+    btn.addEventListener('click', function (e) {
+      console.log(e);
+    });
