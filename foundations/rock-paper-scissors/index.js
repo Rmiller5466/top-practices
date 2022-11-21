@@ -1,10 +1,22 @@
-driver()
+addListeners()
 
-function loop(ps, cs){
-    let user = prompt("Do you choose (Rock) (Paper) or (Scissors)?")
-    user = user.toLowerCase()
-    console.log(`Player chose ${user}`)
-    winner = decideWinner(user, getComputerChoice())
+function addListeners(){
+    let buttonR = document.querySelector("#rock");
+    let buttonP = document.querySelector("#paper");
+    let buttonS = document.querySelector("#scissors");
+
+    buttonR.addEventListener('click', () => driver(buttonR.value));
+    buttonP.addEventListener('click', () => driver(buttonP.value));
+    buttonS.addEventListener('click', () => driver(buttonS.value));
+}
+
+function driver(val){
+    //console.log("Welcome to Rock Paper Scissors!")
+    //playerScore = 0;
+    //computerScore = 0;
+    //console.log(`Starting round ${i + 1}`)
+    console.log(`Player chose ${val}`)
+    winner = decideWinner(val, getComputerChoice())
     switch(winner){
         case 1:
             console.log("The player wins!")
@@ -16,20 +28,7 @@ function loop(ps, cs){
             console.log("Tie!")
             break
     }
-    return winner
-}
-
-function driver(){
-    console.log("Welcome to Rock Paper Scissors!")
-    playerScore = 0;
-    computerScore = 0;
-    for(i = 0; i < 5; i++){
-        console.log(`Starting round ${i + 1}`)
-        let winner = loop(playerScore,computerScore)
-        if(winner == 1) playerScore++
-        if(winner == 2) computerScore++
-    }
-    console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`)
+    //console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`)
 }
 
 function getComputerChoice(){
