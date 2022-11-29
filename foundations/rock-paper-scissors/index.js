@@ -1,9 +1,21 @@
+let buttonR = document.querySelector("#rock");
+let buttonP = document.querySelector("#paper");
+let buttonS = document.querySelector("#scissors");
+
 addListeners()
 
+let playerScore = document.querySelector("#ps");
+let playerScoreInt = 0;
+let playerChoice = document.querySelector("#pd");
+
+let computerScore = document.querySelector("#cs");
+let computerScoreInt = 0;
+let computerChoice = document.querySelector("#cd");
+
+let results = document.querySelector("#res");
+let cont = document.querySelector(".container");
+
 function addListeners(){
-    let buttonR = document.querySelector("#rock");
-    let buttonP = document.querySelector("#paper");
-    let buttonS = document.querySelector("#scissors");
 
     buttonR.addEventListener('click', () => driver(buttonR.value));
     buttonP.addEventListener('click', () => driver(buttonP.value));
@@ -15,18 +27,31 @@ function driver(val){
     //playerScore = 0;
     //computerScore = 0;
     //console.log(`Starting round ${i + 1}`)
-    console.log(`Player chose ${val}`)
-    winner = decideWinner(val, getComputerChoice())
+    //console.log(`Player chose ${val}`)
+    playerChoice.textContent = val;
+    winner = decideWinner(val, getComputerChoice());
     switch(winner){
         case 1:
-            console.log("The player wins!")
+            results.textContent = "The player wins!";
+            playerScoreInt++;
+            playerScore.textContent = playerScoreInt;
             break
         case 2:
-            console.log("The computer wins!")
+            results.textContent = "The computer wins!";
+            computerScoreInt++;
+            computerScore.textContent = computerScoreInt;
             break
         case 3:
-            console.log("Tie!")
-            break
+            results.textContent = "Tie!";
+            break 
+    }
+    if ((playerScoreInt == 5) || (computerScoreInt == 5)) {
+        // document.removeChild(buttonR);
+        // document.removeChild(buttonP);
+        // document.removeChild(buttonS);
+        let end = document.createElement("h2");
+        end.textContent = "Game is Over!";
+        cont.appendChild(end);
     }
     //console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`)
 }
@@ -44,8 +69,8 @@ function getComputerChoice(){
             choice = "scissors"
             break
     }
-    console.log(`Computer chose ${choice}`)
-    return choice
+    computerChoice.textContent = choice;
+    return choice;
 }
 
 function decideWinner(playerSelection, computerSelection){
