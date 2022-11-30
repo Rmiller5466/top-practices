@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+  }
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+  }
+
+.container{
+    width: 600px;
+    height: 600px;
+    
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    
+    border: 2px solid red;
+    background-color: darkred;
+}
+
