@@ -16,15 +16,14 @@ body {
 
 .container{
     margin: auto;
-    width: 604px;
-    height: 604px;
+    width: 600px;
+    height: 600px;
     
     background-color: blue;
-    border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
 }
 
 .grid {
-    border: 2px solid black;
+    border: 1px solid black;
 }
