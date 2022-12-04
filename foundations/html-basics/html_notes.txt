@@ -1,7 +1,0 @@
-Link for all html elements: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-
-Example doctype for html4: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-Within <head>, never include any elements that display content
-
-Html Validator: https://validator.w3.org/
