@@ -9,9 +9,27 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <h1>Drawing Board:</h1>
-    <div class="container"></div>
-    <input type="checkbox" name="grid-toggle" id="grid-toggle">
-    <button id="reset">Reset</button>
+    <h1 class="title">Drawing Board:</h1>
+    <div class="container">
+        <div class="db"></div>
+        <div class="settings">
+            <div class="size-cont">
+                <div class="size-btn">
+                    <label for="gs-8">8px</label>
+                    <input type="radio" name="grid-size" id="gs-8" value="8" autocomplete="off">
+                </div>
+                <div class="size-btn">
+                    <label for="gs-16">16px</label>
+                    <input type="radio" name="grid-size" id="gs-16" value="16" checked autocomplete="off">
+                </div>
+                <div class="size-btn">
+                    <label for="gs-32">32px</label>
+                    <input type="radio" name="grid-size" id="gs-32" value="32" autocomplete="off">
+                </div>
+            </div>          
+            <input type="checkbox" name="grid-toggle" id="grid-toggle" checked autocomplete="off">
+            <button id="reset">Reset</button>
+        </div>  
+    </div>
 </body>
 </html>
