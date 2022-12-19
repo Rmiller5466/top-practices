@@ -10,22 +10,25 @@ html {
 
 .title {
     text-align: center;
-    margin: 1em auto 3em;
+    margin: 0.5em auto 1em;
 }
 
 .container {
     margin: auto;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 2em;
     width: 100%;
 
     
 }
 
 .db {
-  width: 644px;
-  height: 644px;
+  /*width: 644px;
+  height: 644px;*/
+  width: 580px;
+  height: 580px;
   border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
