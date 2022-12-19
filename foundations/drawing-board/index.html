@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <title>Tiny-Draw</title>
+</head>
+<body>
+    <h1 class="title">Drawing Board:</h1>
+    <div class="container">
+        <div class="settings">
+            <fieldset class="size-cont">
+                <legend>Board Size:</legend>
+                <button class="size-btn" value="8">8x8</button>
+                <button class="size-btn" value="16">16x16</button>
+                <button class="size-btn" value="32">32x32</button>
+            </fieldset>   
+            <div class="single-setting-cont">
+                <label for="color-select">Pen Color:</label>       
+                <input type="color" id="color-select" autocomplete="off" value="black">
+            </div>
+            <div class="single-setting-cont">
+                <label for="grid-toggle">Show Grid?</label>       
+                <input type="checkbox" id="grid-toggle" checked autocomplete="off">
+            </div>
+            <button id="reset">Clear Board</button>
+        </div> 
+
+        <div class="db"></div>
+         
+    </div>
+</body>
+</html>

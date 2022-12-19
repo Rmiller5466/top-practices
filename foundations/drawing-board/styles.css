@@ -16,7 +16,7 @@ html {
 .container {
     margin: auto;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: center;
     gap: 2em;
     width: 100%;
@@ -48,7 +48,15 @@ html {
 }
 
 .size-btn {
-  width: 75px;
+  text-align: center;
+  margin: auto;
+  width: 50px;
+}
+
+.single-setting-cont {
+  width: 175px;
+  margin: 25px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 1em;
 }
