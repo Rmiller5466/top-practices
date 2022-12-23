@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+  }
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+  }
+
+.title {
+    text-align: center;
+    margin: 0.5em auto 1em;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+
+    
+}
