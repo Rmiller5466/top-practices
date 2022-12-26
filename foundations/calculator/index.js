@@ -2,37 +2,56 @@ let numberButtons = document.getElementsByClassName("number");
 let otherButtons = document.getElementsByClassName("other");
 let operatorButtons = document.getElementsByClassName("operator");
 
-let decminalKey = undefined;
+let decimalKey = undefined;
 let flag = 0;
 
 let outputArea = document.querySelector(".output");
 let expression = "";
+let validOps = "+-/*^";
 
 for (let button of numberButtons) {
 	button.addEventListener("click", function () {
 		expression += button.value;
-		evaluateExpression();
+		updateOutputText();
 	});
 }
 
-// for (let button of operatorButtons) {
-// 	console.log(button.value);
-// 	switch (button.value) {
-//         case "expon": break;,
-//         case "divsion": break;
-//         case "multiply": break;
-//         case "subtract": break;
-//         case "add": break;
-//         case "sign": break;
-// 	}
-// 	button.addEventListener("click", function () {
-// 		expression += button.value;
-// 		evaluateExpression(expression);
-// 	});
-// }
+for (let button of operatorButtons) {
+	switch (button.value) {
+		case "expon":
+			button.addEventListener("click", function () {
+				expression += "^";
+				updateOutputText();
+			});
+			break;
+		case "divsion":
+			button.addEventListener("click", function () {
+				expression += "/";
+				updateOutputText();
+			});
+			break;
+		case "multiply":
+			button.addEventListener("click", function () {
+				expression += "*";
+				updateOutputText();
+			});
+			break;
+		case "subtract":
+			button.addEventListener("click", function () {
+				expression += "-";
+				updateOutputText();
+			});
+			break;
+		case "add":
+			button.addEventListener("click", function () {
+				expression += "+";
+				updateOutputText();
+			});
+			break;
+	}
+}
 
 for (let button of otherButtons) {
-	console.log(button.value);
 	switch (button.value) {
 		case "clear":
 			button.addEventListener("click", clearExpression);
@@ -41,10 +60,10 @@ for (let button of otherButtons) {
 			button.addEventListener("click", removeLastEntry);
 			break;
 		case "decimal":
-			decminalKey = button;
+			decimalKey = button;
 			button.addEventListener("click", addDecimal);
 			break;
-		case "evaulate":
+		case "evaluate":
 			button.addEventListener("click", evaluateExpression);
 			break;
 	}
@@ -75,22 +94,33 @@ function removeLastEntry() {
 
 function addDecimal() {
 	flag = 1;
-	decminalKey.classList.toggle("key");
+	decimalKey.classList.toggle("key");
 	expression += ".";
-	decminalKey.toggleAttribute("disabled");
+	decimalKey.toggleAttribute("disabled");
 	updateOutputText();
 }
 
 function resetDecimal() {
 	flag = 0;
-	decminalKey.classList.toggle("key");
-	decminalKey.toggleAttribute("disabled");
+	decimalKey.classList.toggle("key");
+	decimalKey.toggleAttribute("disabled");
 }
 
 function evaluateExpression() {
-	if (expression == "") {
-		outputArea.textContent = "0";
-		return;
+	tempExpr = "";
+	operands = [];
+	operators = [];
+
+	for (let character of expression) {
+		if (validOps.includes(character)) {
+			operands.push(tempExpr);
+			operators.push(character);
+			tempExpr = "";
+		} else tempExpr += character;
 	}
-	outputArea.textContent = expression;
+	operands.push(tempExpr);
+
+	console.log(operands);
+	console.log(operators);
+	clearExpression();
 }
