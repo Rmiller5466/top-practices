@@ -14,8 +14,9 @@ html {
 }
 
 .container {
-	max-width: 30%;
-	height: 75vh;
+	min-width: fit-content;
+	max-width: max-content;
+	min-height: 75vh;
 	margin: auto;
 	margin-top: 5em;
 	padding: 1.5em;
@@ -27,8 +28,12 @@ html {
 	border: 2px solid #566963;
 }
 
-.grid-col-span {
+.grid-col-span-full {
 	grid-column: span 4;
+}
+
+.grid-col-span-2 {
+	grid-column: span 2;
 }
 
 .key {
