@@ -55,7 +55,6 @@ for (let button of operatorButtons) {
 }
 
 function handleOperator(operator) {
-	console.log(operator);
 	expression += operator;
 	updateOutputText();
 	if (decimalFlag) resetDecimal();
@@ -120,8 +119,6 @@ function evaluateExpression() {
 	}
 
 	operands.reverse();
-	console.log(operands);
-	console.log(operators);
 
 	let num1 = operands.pop();
 	let num2 = 0;
@@ -148,7 +145,6 @@ function evaluateExpression() {
 		}
 	}
 
-	console.log(num1);
 	expression = num1.toString();
 	updateOutputText();
 	expression = "";
